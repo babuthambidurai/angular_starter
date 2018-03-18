@@ -18,9 +18,11 @@ export class AppComponent {
     this.message = 'received event : ' + this.menu;
 
     switch (this.menu) {
-      case 'customers': this.isCustomers = true; this.isHome = false; break;
+      case 'customers':
+        this.isCustomers = true; this.isHome = false; break;
       case 'home':
-      default: this.isHome = true; this.isCustomers = false;
+      default:
+        this.isHome = true; this.isCustomers = false;
     }
   }
 }
