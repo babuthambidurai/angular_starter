@@ -41,23 +41,11 @@
           <th>Quantity</th>
         </thead>
         <tbody>
-          <tr>
-              <td>Mark Anderson</td>
-              <td>Europe Mid Cap Fund</td>
-              <td>10.99$</td>
-              <td>1000</td>
-          </tr>
-          <tr>
-              <td>Dennis Wheeler</td>
-              <td>SNX Top 100 Fund</td>
-              <td>19.99$</td>
-              <td>2000</td>
-          </tr>
-          <tr>
-              <td>John Carson</td>
-              <td>FGX Intl. MMG Equities</td>
-              <td>45.99$</td>
-              <td>2500</td>
+          <tr *ngFor="let c of customerList">
+            <td>{{c.name}}</td>
+            <td>{{c.fund}}</td>
+            <td>{{c.nav}}</td>
+            <td>{{c.qty}}</td>
           </tr>
         </tbody>
       </table>
