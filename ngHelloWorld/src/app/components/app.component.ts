@@ -1,17 +1,24 @@
 import { Component, Input } from '@angular/core';
 import {AppMenuComponent} from '../app-menu/app-menu.component';
+import { CustomerService } from '../customer.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  customerList = [];
+  
   title = 'World';
   message = 'This is an app created using angular-cli.';
   menu = 'home';
 
   isHome = true;
   isCustomers = false;
+
+  constructor(private customerService: CustomerService) {
+    this.customerList = customerService.getCustomers();
+  }
 
   menuChange($event) {
     this.menu = $event;
