@@ -7,7 +7,6 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  customerList = [];
   
   title = 'World';
   message = 'This is an app created using angular-cli.';
@@ -16,18 +15,16 @@ export class AppComponent {
   isHome = true;
   isCustomers = false;
 
-  constructor(private customerService: CustomerService) {
-    this.customerList = customerService.getCustomers();
-  }
-
   menuChange($event) {
     this.menu = $event;
     this.message = 'received event : ' + this.menu;
 
     switch (this.menu) {
-      case 'customers': this.isCustomers = true; this.isHome = false; break;
+      case 'customers':
+        this.isCustomers = true; this.isHome = false; break;
       case 'home':
-      default: this.isHome = true; this.isCustomers = false;
+      default:
+        this.isHome = true; this.isCustomers = false;
     }
   }
 }
