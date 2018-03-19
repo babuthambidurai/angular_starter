@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CustomerService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   public getCustomers() {
     return [
@@ -34,6 +35,10 @@ export class CustomerService {
         qty: 400
       }, 
     ];
+  }
+
+  public getCustomersApi() {
+    this.http.get('http://localhost:8080/customers')
   }
 
 }
