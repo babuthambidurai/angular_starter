@@ -38,7 +38,7 @@ export class CustomerService {
   }
 
   public getCustomersApi() {
-    this.http.get('http://localhost:8080/customers')
+    return this.http.get('http://localhost:8080/customers');
   }
 
 }

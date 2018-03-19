@@ -33,22 +33,7 @@
   </div>
   <div class="row" *ngIf="isCustomers">
     <div class="col-sm-12">
-      <table class="table table-bordered table-hover table-striped">
-        <thead class="thead-light">
-          <th>Investor</th>
-          <th>Fund</th>
-          <th>NAV</th>
-          <th>Quantity</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let c of customerList">
-            <td>{{c.name}}</td>
-            <td>{{c.fund}}</td>
-            <td>{{c.nav}}</td>
-            <td>{{c.qty}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <app-customers></app-customers>
     </div>
   </div>
 
