@@ -5,7 +5,7 @@
       <app-menu [menu]="menu" (menuEvent)="menuChange($event)"></app-menu>
     </div>
   </div>
-  <div class="row" *ngIf="isHome">
+  <!-- <div class="row" *ngIf="isHome">
     <div class="col-sm-10">
       <div>
         <div class="jumbotron">
@@ -19,15 +19,14 @@
       </div>
     </div>
     <div class="col-sm-2">
-        <div class="d-inline pull-right">
-            <img width="180" alt="Angular Logo" 
-            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-        </div>
+      <div class="d-inline pull-right">
+        <img width="180" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-8 ml-3">
         <label>Enter your name : </label>
-        <input type="text" class="form-control" [(ngModel)]="title"/>
+        <input type="text" class="form-control" [(ngModel)]="title" />
       </div>
     </div>
   </div>
@@ -36,5 +35,47 @@
       <app-customers></app-customers>
     </div>
   </div>
-
+  <div class="row" *ngIf="isContact">
+    <div class="col-sm-12">
+      <app-customers></app-customers>
+    </div>
+  </div> -->
+  <!-- using ngSwitch -->
+  <div [ngSwitch]="menu">
+    <div class="row" *ngSwitchCase="'home'">
+      <div class="col-sm-10">
+        <div>
+          <div class="jumbotron">
+            <div class="h2">
+              Hello {{ title | uppercase }}!
+            </div>
+            <div>
+              {{message}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="d-inline pull-right">
+          <img width="180" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 ml-3">
+          <label>Enter your name : </label>
+          <input type="text" class="form-control" [(ngModel)]="title" />
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngSwitchCase="'customers'">
+      <div class="col-sm-12">
+        <app-customers></app-customers>
+      </div>
+    </div>
+    <div class="row" *ngSwitchCase="'contacts'">
+      <div class="col-sm-12">
+        <app-forms></app-forms>
+      </div>
+    </div>
+  </div>
 </div>
