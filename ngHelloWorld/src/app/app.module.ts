@@ -10,6 +10,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { CustomerService } from './customer.service';
 import { FormsComponent } from './forms/forms.component';
 import { SignupComponent } from './signup/signup.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SignupComponent } from './signup/signup.component';
     AppMenuComponent,
     CustomersComponent,
     FormsComponent,
-    SignupComponent
+    SignupComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
