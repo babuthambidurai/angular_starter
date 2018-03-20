@@ -1,0 +1,13 @@
+<div class="container" style="text-align:center">
+  <div class="h5">
+    Welcome to {{title}}!!
+  </div>
+  <nav class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link" routerLink="home" routerLinkActive="active">Home</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="about" routerLinkActive="active">About</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="dashboard" routerLinkActive="active">Dashboard</a></li>
+  </nav>
+  <div class="card">
+    <router-outlet></router-outlet>
+  </div>
+</div>

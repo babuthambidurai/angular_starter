@@ -1,0 +1,26 @@
+
+<div class="row">
+  <div class="col-sm-2">
+    <label> Single : </label>
+  </div>
+  <div class="col-sm-4">
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" 
+    optionLabel="label" [showClear]="true"></p-dropdown>
+  </div>
+  <div class="col-sm-4">
+    <p>Selected City: {{selectedCity ? selectedCity.value : 'none'}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+      <button pButton type="button" label="Click" ></button>
+  </div>
+  <div class="col-sm-4">
+      <p-button label="Click" ></p-button>
+  </div>
+</div>
+<div class="card mt-2">
+    <p-chart type="bar" [data]="data"></p-chart>
+</div>
+
+

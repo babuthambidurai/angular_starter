@@ -1,0 +1,60 @@
+<div class="card bg-light">
+  <div class="card-body">
+
+    <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="submitForm()">
+      <fieldset>
+        <legend>SignUp</legend>
+
+        <div class="form-group row">
+          <label for="inputEmail" class="col-sm-4">Email</label>
+          <input type="text" class="col-sm-6" formControlName="email" id="inputEmail" maxlength="20" placeholder="Email" />
+        </div>
+
+        <div *ngIf="email.invalid && email.touched" class="well pb-2 text-danger">
+          <span *ngIf="email.errors?.required">
+            Email field can't be blank
+          </span>
+        
+          <span *ngIf="email.errors?.email">
+            , The email id doesn't seem right
+          </span>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-4">Password</label>
+          <input type="password" class="col-sm-6" formControlName="pwd" id="inputPassword" placeholder="Password" />
+        </div>
+
+        <div class="form-group row">
+          <label for="confirmPassword" class="col-sm-4">Confirm Password</label>
+          <input type="password" class="col-sm-6" formControlName="confirmPwd" id="confirmPassword" placeholder="Password" />
+        </div>
+
+        <div class="form-group row">
+          <label for="select" class="col-sm-4">Gender</label>
+          <select id="select" class="col-sm-6" formControlName="gender">
+            <option *ngFor="let x of genderList" [value]="x"> {{x}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group checkbox">
+          <label class="col-sm-10">
+            <input type="checkbox" formControlName="terms" /> Confirm that you've read the Terms and Conditions
+          </label>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <button type="reset" class="btn btn-default">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <p>Form value {{ signupForm.value | json }} </p>
+    <p> Form status {{ signupForm.status | json}} </p>
+  </div>
+</div>

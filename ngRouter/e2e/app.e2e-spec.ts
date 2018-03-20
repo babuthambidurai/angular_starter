@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ng-hello-world App', () => {
+describe('ng-router App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('ng-hello-world App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Hello WORLD!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

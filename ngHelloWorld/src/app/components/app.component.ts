@@ -7,6 +7,11 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
+  dateVal = new Date();
+  numVal = 123456.987;
+  msg = "This is a message";
   
   title = 'World';
   message = 'This is an app created using angular-cli.';
