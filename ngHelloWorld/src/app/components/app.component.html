@@ -77,5 +77,20 @@
         <app-forms></app-forms>
       </div>
     </div>
+    <div class="row" *ngSwitchCase="'reactive'">
+      <div class="col-sm-12">
+        <app-signup></app-signup>
+      </div>
+    </div>
+    <div class="card" *ngSwitchCase="'pipes'">
+      <div class="card-body pl-2">
+      <p> Date : {{ dateVal | date}} </p>
+      <p> Percent : {{ numVal | percent}} </p>
+      <p> Decimal : {{ numVal | number }} </p>
+      <p> Currency : {{ numVal | currency }} </p>
+      <p> UpperCase : {{ msg  | uppercase}} </p>
+      <p> LowerCase : {{ msg | lowercase}} </p>
+      </div>
+    </div>
   </div>
 </div>
